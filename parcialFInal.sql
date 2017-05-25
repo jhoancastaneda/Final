@@ -1,11 +1,11 @@
 create trigger findSum BEFORE INSERT ON findSum FOR EACH ROW
 BEGIN
-SELECT finfSum_function (:NEW.findSum) into :new.resultado from dual; 
+  SELECT finfSum_function (:NEW.findSum) into :new.resultado from dual; 
 END;
 
 CREATE OR REPLACE FUNCTION findSum (N INT)
-RETURN varchar2( 4000)is
-resultado  varchar2;
+RETURN varchar2 is
+resultado  varchar2(4000);
 AA_N EXCEPTION;
 AA_D EXCEPTION;
 
